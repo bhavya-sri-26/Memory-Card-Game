@@ -2,7 +2,6 @@
 
 A fun and interactive Memory Card Matching Game built using **HTML, CSS, and JavaScript**. Flip cards, test your memory, and try to match all pairs in the shortest time!
 
-![Screenshot 2025-04-05 162558](https://github.com/user-attachments/assets/63621549-fbd1-46e0-9a4f-5899e882f059)
 ![image](https://github.com/user-attachments/assets/e4be5b0f-0501-4b5b-887d-ee12059fa803)
 
 
@@ -44,6 +43,6 @@ Check it out here [Memory Card Game Live](https://bhavya-sri-26.github.io/Memory
 
 ## Author
 
-Created with 💙 by **Bhavya Sri Inkollu>**  
-[GitHub](https://github.com/<your-github-username>)
+Created by **Bhavya Sri Inkollu>**  
+[GitHub](https://github.com/bhavya-sri-26)
 
