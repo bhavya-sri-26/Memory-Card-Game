@@ -8,7 +8,9 @@ body{
     background-repeat: no-repeat;
     color: white;
     backdrop-filter: blur(2px);
-    min-height:100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 h1 {
     font-family: 'Bangers', cursive; /* A comic-style font */
@@ -16,6 +18,7 @@ h1 {
     font-size: 3rem;
     text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.3), 
                  -3px -3px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 #info {
@@ -30,32 +33,30 @@ h1 {
 
 #timer, #moves {
     font-weight: bold;
-    -webkit-text-stroke: 1px black;
-    /* margin: 0 20px; */
+    margin: 0;
 }
 
 img{
     border-radius: 5px;
 }
 #game{
-    height: 430px;
-    width: 445px;
+    height: 450px;
+    width: 450px;
     margin: 0px auto;
     padding: 20px;
     display: grid; 
     gap: 10px;
-    grid-template-rows: repeat(4,100px);
-    grid-template-columns: repeat(4,100px);
+    grid-template-rows: repeat(4,140px);
+    grid-template-columns: repeat(4,110px);
 }
 .card {
     position: relative;
     width: 100px;
-    height: 100px;
+    height: 130px;
     perspective: 1000px; /* Gives the 3D effect */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("back.jpg");
     cursor: pointer;
     border-radius: 12px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
@@ -114,7 +115,7 @@ img{
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 130px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -125,71 +126,145 @@ img{
     transform: scale(1.1);
 }
 
-
-@media screen and (max-width: 600px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
+/* Tablets (landscape and portrait) and smaller laptops */
+@media screen and (max-width: 1024px) {
     #game {
-        width: 90vw; /* Make the game fit within the screen */
+        justify-content: center;
         height: auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Maintain 4x4 grid */
-        gap: 5px; /* Reduce gap */
+        padding: 10px;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(4, auto);
+        gap: 7px;
     }
 
     .card {
-        width: 20vw; /* Adjust card size */
-        height: 20vw;
+        width: 15vw;
+        height: 15vw;
     }
 
     h1 {
-        font-size: 24px;
-        text-align: center;
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     #info {
+        gap: 150px;
+        font-size: 20px;
+    }
+
+    #reset {
+        margin-top: 50px;
+        font-size: 16px;
+    }
+}
+
+
+/* Phones and small devices */
+@media screen and (max-width: 600px) {
+    #game {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .card {
+        width: 22vw;
+        height: 28vw;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    #info {
+        flex-direction: row;
+        gap: 80px;
+        font-size: 16px;
+    }
+
+    #reset {
+        font-size: 14px;
+        width: 80%;
+        margin: 20px auto 0;
+    }
+}
+
+
+/* Extra small screens (like older phones or very narrow screens) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #info {
+        flex-direction:row;
+        gap: 80px;
         font-size: 18px;
     }
 
-    #reset {
-        width: 80%;
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-
-@media (max-width: 400px) {
     #game {
-        width: 260px;
-        grid-template-rows: repeat(4, 60px);
-        grid-template-columns: repeat(4, 60px);
-        gap: 5px;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 8px;
     }
 
     .card {
-        width: 60px;
-        height: 60px;
+        width: 100%;
+        aspect-ratio: 0.8; /* Maintain height proportional to width */
+        height: auto;
     }
 
-    h1 {
-        font-size: 22px;
-    }
-
-    #info {
-        flex-direction: column;
-        gap: 5px;
+    .card img {
+        object-fit: contain;
     }
 
     #reset {
-        font-size: 12px;
-        padding: 8px 15px;
+        width: 90%;
+        font-size: 16px;
+        margin: 20px auto 0;
+        display: block;
     }
 }
 
-  
+@media screen and (max-width: 400px) {
+    #game {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 8px;
+    }
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #info {
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        gap: 50px;
+    }
+
+    #reset {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
