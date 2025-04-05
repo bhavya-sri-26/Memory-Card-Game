@@ -160,7 +160,7 @@ function restart() {
     secondCard = null;
     lockboard = false;
 
-    document.getElementById("moves").innerText = moves;
+    document.getElementById("moves").innerText =` Moves:`;
     document.getElementById("timer").innerText = `Timer: ${timeElapsed}`;
 
     shuffle(cardList);
